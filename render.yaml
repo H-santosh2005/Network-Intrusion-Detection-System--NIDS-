@@ -1,0 +1,8 @@
+# OPTIONAL - only needed if you choose to deploy to Render
+services:
+  - type: web
+    name: nids-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --chdir backend app:app
